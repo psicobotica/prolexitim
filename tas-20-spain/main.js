@@ -168,8 +168,8 @@ function check() {
 
 		puntos = evaluarTAS();
 		document.getElementById("after_submit").style.visibility = "visible";
-		document.getElementById("number_correct").innerHTML = "Has obtenido un total de " + puntos[0] + " puntos, de los cuales " 
-		+ puntos[1] + " se corresponden con dificultad para identificar sentimientos y diferenciarlos de las sensaciones corporales, " + puntos[2] + " con dificultad para expresar los sentimientos a los demás y " + puntos[3] + " con estilo de pensamiento orientado a lo externo.";
+		document.getElementById("number_correct").innerHTML = "Has obtenido un total de " + puntos[0] + " puntos. " 
+		+ "(F1: " + puntos[1] + "; F2: " + puntos[2] + "; F3: " + puntos[3] + ").";
 	}
 
 
@@ -181,6 +181,7 @@ function check1() {
 
 	//De nuevo se extraen las variables del formulario:
 
+	var sexo = parseInt(document.aenviar.sex.value);
 	var genero = parseInt(document.aenviar.gender.value);
 	var edad = document.aenviar.edad.value;
 	var manoDominante = parseInt(document.aenviar.manoDominante.value);
@@ -199,11 +200,14 @@ function check1() {
 	if (Number.isNaN(genero)) {
 		alert("No has indicado tu identidad de género.");
 		todorespondido1 = false;
+	} else if (Number.isNaN(sexo)) {
+		alert("No has indicado tu sexo.");
+		todorespondido1 = false;
 	} else if (Number.isNaN(edad)) {
 		alert("No has indicado tu edad.");
 		todorespondido1 = false;
 	}else if (Number.isNaN(manoDominante)) {
-		alert("No has indicado tu mano dominante."+ edad);
+		alert("No has indicado tu mano dominante.");
 		todorespondido1 = false;
 	}else if (Number.isNaN(estudios)) {
 		alert("No has indicado tu nivel de estudios.");

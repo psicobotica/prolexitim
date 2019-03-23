@@ -7,9 +7,9 @@ body {
 #tas {
 	margin-left: 50px;
 	margin-top: 15px;
-	background: #d2def2;
+	background: #ddeedd;
 	padding: 50 px 50 px 50 px 50 px;
-	width: 800px;
+	width: 700px;
 	border-radius: 20 px;
 	display: block;
 } 
@@ -37,7 +37,7 @@ input {
 
 #after_submit {
 	visibility: hidden;
-	background: green;
+	background: #ddeedd;
 	padding: 10px 20px 10px 20px;
 	border-radius: 20px;
 	margin-left: 20px;
