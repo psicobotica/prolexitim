@@ -3,7 +3,6 @@ var codigo = null;
 var csv_row = ""; 
 var sep = ",";
 var tiempo = 0; 
-var trials = getAllCookies();
 
 function welcome() {
 alert("Bienvenido al test TAS20");
@@ -163,6 +162,7 @@ function check() {
 		alert("No has respondido a la pregunta 20.");
 		todorespondido = false;
 	} else {
+		document.getElementById("button_comp").disabled = false;
 		alert("¡Tus respuestas han sido procesadas!. Completa unos últimos datos y haz click en enviar más abajo para entregar el formulario.")
 	}
 
@@ -201,7 +201,6 @@ function check1() {
 	var etnia = document.aenviar.etnia.value;
 	var oficio = document.aenviar.oficio.value;
     
-	csv_row += sep + sexo + sep + genero + sep + edad + sep + manoDominante + sep + estudios + sep + clase + sep + numhermanos + sep + posicionhermanao + sep + origen + sep + residencia + sep + tiempoenresidencia + sep + etnia + sep + oficio;
 
 	document.getElementById("Total").value = puntos[0];
 	document.getElementById("F1").value = puntos[1];
@@ -212,7 +211,7 @@ function check1() {
 	document.getElementById("time").value = tiempo;
 	document.getElementById("csv").value = csv_row;	
 	
-	setCookie(codigo, csv_row, 365);
+
 	
 	var todorespondido1 = true;
 
@@ -252,10 +251,15 @@ function check1() {
 	}   else if (oficio == "") {
 		alert("No has indicado tu ocupación.");
 		todorespondido1 = false;
-	}   else {		
-		document.getElementById("after_submit2").style.visibility = "visible";
-		document.getElementById("data_correct").innerHTML = "DATOS: " + csv_row;
-		alert("¡Perfecto! Has terminado el formulario. Haz click en Enviar para terminar");
+	}   else {	
+			csv_row += sep + sexo + sep + genero + sep + edad + sep + manoDominante + sep + estudios + sep + clase + sep + numhermanos + sep + posicionhermanao + sep + origen + sep + residencia + sep + tiempoenresidencia + sep + etnia + sep + oficio;	
+			document.getElementById("after_submit2").style.visibility = "visible";
+			document.getElementById("data_correct").innerHTML = "DATOS: " + csv_row;
+			document.getElementById("button_enviar").disabled = false;
+			document.getElementById("button_comp").disabled = true;
+			<!-- setCookie(codigo, csv_row, 365); -->
+			localStorage.setItem("tas20_" + codigo, csv_row);
+			alert("¡Perfecto! Has terminado el formulario. Haz click en Enviar para terminar");
 	} 
 
 

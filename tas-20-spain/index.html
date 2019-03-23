@@ -7,7 +7,7 @@
 	<link href="style.css" rel = "stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	<script src = "timer.js"></script>
-	<script src = "cookie.js"></script>
+	<script src = "storage.js"></script>
 	<script src = "md5.js"></script>
 	<script src = "main.js"></script>
 
@@ -19,6 +19,7 @@
 
 <!-- <script> welcome() </script> -->
 
+<!-- <script>CheckBrowserStorage()</script> -->
 
 <script> getEmail() </script>
 <script> genCode() </script>
@@ -1049,15 +1050,15 @@ Recuerde que las respuestas son anónimas. </h4>
 
 	<br>&nbsp;<br>
 
-	<input id = "button" type = "button" value = "Comprobar" onclick = "check1();"> 
-	
+	<input id = "button_comp" type = "button" value = "Comprobar" disabled="true" onclick = "check1();"> 
 	
 	<div id = "after_submit2">
 	<p id = "data_correct"></p>
 	</div>
 
-	<p>&nbsp;</p>
-	<input id = "button" type = "submit" value = "ENVIAR">
+	<input id = "button_enviar" type = "submit" disabled="true" value = "ENVIAR">
+	
+	<hr>
 
 </form>
 
