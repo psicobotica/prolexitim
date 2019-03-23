@@ -3,6 +3,7 @@ var codigo = null;
 var csv_row = ""; 
 var sep = ",";
 var tiempo = 0; 
+var trials = getAllCookies();
 
 function welcome() {
 alert("Bienvenido al test TAS20");
@@ -10,7 +11,6 @@ alert("Bienvenido al test TAS20");
 
 /* La función evaluarTAS se llama una vez comprobada que todas las preguntas están respondidas y calcula los coeficientes asociados a dichas respuestas.
  Devuelve dichos coeficientes en un array. */
-
 
 
 function getEmail() {
@@ -211,6 +211,8 @@ function check1() {
 	document.getElementById("email").value = email;
 	document.getElementById("time").value = tiempo;
 	document.getElementById("csv").value = csv_row;	
+	
+	setCookie(codigo, csv_row, 365);
 	
 	var todorespondido1 = true;
 
