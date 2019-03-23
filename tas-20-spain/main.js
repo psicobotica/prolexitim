@@ -2,7 +2,7 @@ var email = null;
 var codigo = null;
 var csv_row = ""; 
 var sep = ",";
-
+var tiempo = 0; 
 
 function welcome() {
 alert("Bienvenido al test TAS20");
@@ -171,10 +171,11 @@ function check() {
 	if (todorespondido) {
 
 		puntos = evaluarTAS();
+		tiempo = getElapsedTime();
 		document.getElementById("after_submit").style.visibility = "visible";
-		document.getElementById("number_correct").innerHTML = "Has obtenido un total de " + puntos[0] + " puntos." 
-		+ "(F1: " + puntos[1] + "; F2: " + puntos[2] + "; F3: " + puntos[3] + ").";
-		csv_row += codigo + sep + email + sep + puntos[0] + sep + puntos[1] + sep + puntos[2] + sep + puntos[3]; 
+		document.getElementById("number_correct").innerHTML = "Has obtenido un total de " + puntos[0] + " puntos. " 
+		+ "tiempo: " + tiempo + " ms. (F1: " + puntos[1] + "; F2: " + puntos[2] + "; F3: " + puntos[3] + ").";
+		csv_row += codigo + sep + email + sep + tiempo + sep + puntos[0] + sep + puntos[1] + sep + puntos[2] + sep + puntos[3]; 
 	}
 
 
@@ -253,6 +254,7 @@ function check1() {
 	this.form.elements["F3"] = puntos[3];
 	this.form.elements["code"] = codigo;
 	this.form.elements["email"] = email;
+	this.form.elements["time"] = tiempo;
 	this.form.elements["csv"] = csv_row;
 	
 
