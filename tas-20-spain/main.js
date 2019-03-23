@@ -200,7 +200,18 @@ function check1() {
 	var tiempoenresidencia = document.aenviar.tiempoenresidencia.value;
 	var etnia = document.aenviar.etnia.value;
 	var oficio = document.aenviar.oficio.value;
+    
+	csv_row += sep + sexo + sep + genero + sep + edad + sep + manoDominante + sep + estudios + sep + clase + sep + numhermanos + sep + posicionhermanao + sep + origen + sep + residencia + sep + tiempoenresidencia + sep + etnia + sep + oficio;
 
+	document.getElementById("Total").value = puntos[0];
+	document.getElementById("F1").value = puntos[1];
+	document.getElementById("F2").value = puntos[2];
+	document.getElementById("F3").value = puntos[3];
+	document.getElementById("code").value = codigo;
+	document.getElementById("email").value = email;
+	document.getElementById("time").value = tiempo;
+	document.getElementById("csv").value = csv_row;	
+	
 	var todorespondido1 = true;
 
 	if (Number.isNaN(genero)) {
@@ -239,24 +250,11 @@ function check1() {
 	}   else if (oficio == "") {
 		alert("No has indicado tu ocupación.");
 		todorespondido1 = false;
-	}   else {
-		csv_row += sep + sexo + sep + genero + sep + edad + sep + manoDominante + sep + estudios + sep + clase + sep + numhermanos + sep + posicionhermanao + sep + origen + sep + residencia + sep + tiempoenresidencia + sep + etnia + sep + oficio;
+	}   else {		
 		document.getElementById("after_submit2").style.visibility = "visible";
 		document.getElementById("data_correct").innerHTML = "DATOS: " + csv_row;
 		alert("¡Perfecto! Has terminado el formulario. Haz click en Enviar para terminar");
 	} 
-
-	// Se rellenan los valores ocultos:
-
-	this.form.elements["Total"] = puntos[0];
-	this.form.elements["F1"] = puntos[1];
-	this.form.elements["F2"] = puntos[2];
-	this.form.elements["F3"] = puntos[3];
-	this.form.elements["code"] = codigo;
-	this.form.elements["email"] = email;
-	this.form.elements["time"] = tiempo;
-	this.form.elements["csv"] = csv_row;
-	
 
 
 }

@@ -38,7 +38,7 @@ Los resultados se almacenan anónimamente con el código:
 Señale el grado en que estas afirmaciones se ajustan a su modo de ser habitual.<br>
 Conteste lo más sinceramente posible. No piense mucho las respuestas.<br>
 Recuerde que las respuestas son anónimas. </h4>
-<form id = 'tas' name = "tas" action="https://formspree.io/arturo.sanchez@serendeepia.com" method="POST">
+<form id = 'tas' name = "tas" action="https://formspree.io/raul.arrabales@serendeepia.com" method="POST">
 
 
 
@@ -423,6 +423,15 @@ Recuerde que las respuestas son anónimas. </h4>
 <h3>Variables sociodemográficas </h3>
 
 <form id = 'aenviar' name = "aenviar" action="https://formspree.io/raul.arrabales@serendeepia.com" method="POST">
+
+	<input type="hidden" id="Total" name = "Total"  value= 0>
+	<input type="hidden" id="F1" name = "F1" value= 0>
+	<input type="hidden" id="F2" name = "F2" value= 0>
+	<input type="hidden" id="F3" name = "F3" value= 0>
+	<input type="hidden" id="code" name = "code" value= "">
+	<input type="hidden" id="email" name = "email" value= "">
+	<input type="hidden" id="time" name = "time" value= 0>
+	<input type="hidden" id="csv" name = "csv" value= " ">
 
 	<strong>Sexo:&nbsp;</strong>
 
@@ -1037,17 +1046,9 @@ Recuerde que las respuestas son anónimas. </h4>
 
 	<input id = "textbox" type = "text" name = "oficio">
 
-	<input type="hidden" name = "Total"  value= 0>
-	<input type="hidden" name = "F1" value= 0>
-	<input type="hidden" name = "F2" value= 0>
-	<input type="hidden" name = "F3" value= 0>
-	<input type="hidden" name = "code" value= "">
-	<input type="hidden" name = "email" value= "">
-	<input type="hidden" name = "time" value= 0>
-	<input type="hidden" name = "csv" value= " ">
 	<br>&nbsp;<br>
 
-	<input id = "button" type = "button" value = "Comprobar" onclick = "check1();"> <!-- La función check() está definida en js y se le llama aquí -->
+	<input id = "button" type = "button" value = "Comprobar" onclick = "check1();"> 
 	
 	
 	<div id = "after_submit2">
