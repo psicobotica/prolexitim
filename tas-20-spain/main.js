@@ -1,3 +1,8 @@
+var email = null;
+var codigo = null;
+var csv_row = ""; 
+var sep = ",";
+
 
 function welcome() {
 alert("Bienvenido al test TAS20");
@@ -6,8 +11,7 @@ alert("Bienvenido al test TAS20");
 /* La función evaluarTAS se llama una vez comprobada que todas las preguntas están respondidas y calcula los coeficientes asociados a dichas respuestas.
  Devuelve dichos coeficientes en un array. */
 
-var email = null;
-var codigo = null;
+
 
 function getEmail() {
 	while (email == null || email == "") {
@@ -168,8 +172,9 @@ function check() {
 
 		puntos = evaluarTAS();
 		document.getElementById("after_submit").style.visibility = "visible";
-		document.getElementById("number_correct").innerHTML = "Has obtenido un total de " + puntos[0] + " puntos. " 
+		document.getElementById("number_correct").innerHTML = "Has obtenido un total de " + puntos[0] + " puntos." 
 		+ "(F1: " + puntos[1] + "; F2: " + puntos[2] + "; F3: " + puntos[3] + ").";
+		csv_row += codigo + sep + email + sep + puntos[0] + sep + puntos[1] + sep + puntos[2] + sep + puntos[3]; 
 	}
 
 
@@ -206,10 +211,10 @@ function check1() {
 	} else if (Number.isNaN(edad)) {
 		alert("No has indicado tu edad.");
 		todorespondido1 = false;
-	}else if (Number.isNaN(manoDominante)) {
+	} else if (Number.isNaN(manoDominante)) {
 		alert("No has indicado tu mano dominante.");
 		todorespondido1 = false;
-	}else if (Number.isNaN(estudios)) {
+	} else if (Number.isNaN(estudios)) {
 		alert("No has indicado tu nivel de estudios.");
 		todorespondido1 = false;
 	} else if (clase == "") {
@@ -234,6 +239,9 @@ function check1() {
 		alert("No has indicado tu ocupación.");
 		todorespondido1 = false;
 	}   else {
+		csv_row += sep + sexo + sep + genero + sep + edad + sep + manoDominante + sep + estudios + sep + clase + sep + numhermanos + sep + posicionhermanao + sep + origen + sep + residencia + sep + tiempoenresidencia + sep + etnia + sep + oficio;
+		document.getElementById("after_submit2").style.visibility = "visible";
+		document.getElementById("data_correct").innerHTML = "DATOS: " + csv_row;
 		alert("¡Perfecto! Has terminado el formulario. Haz click en Enviar para terminar");
 	} 
 
@@ -243,6 +251,10 @@ function check1() {
 	this.form.elements["F1"] = puntos[1];
 	this.form.elements["F2"] = puntos[2];
 	this.form.elements["F3"] = puntos[3];
+	this.form.elements["code"] = codigo;
+	this.form.elements["email"] = email;
+	this.form.elements["csv"] = csv_row;
+	
 
 
 }

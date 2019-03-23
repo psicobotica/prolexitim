@@ -42,3 +42,11 @@ input {
 	border-radius: 20px;
 	margin-left: 20px;
 }
+
+#after_submit2 {
+	visibility: hidden;
+	background: #ddeedd;
+	padding: 10px 20px 10px 20px;
+	border-radius: 20px;
+	margin-left: 20px;
+}
