@@ -1,5 +1,6 @@
 
-  var machine = new StateMachine({
+// Finite State Machine definition for EFE Test 
+ var machine = new StateMachine({
     init: 'start',
     transitions: [
       { name: 'imgs_loaded',     from: 'start',  to: 'welcome' },
@@ -11,14 +12,39 @@
 	  { name: 'response', from: 'efe_challenge',    to: 'fixation' },
 	  { name: 'finish', from: 'efe_challenge',    to: 'end' }
     ],
+	data: {
+		current_iteration: 1,
+		current_image: 'none'
+	},
     methods: {
-      onImgs_loaded:     function() { console.log('Imaged loaded')    },
-      onGot_new_email:   function() { console.log('New user, need demographics')     },
-	  onGot_knowm_email:   function() { console.log('Known user, retrieved demographics')     },
-      onGot_demographics: function() { console.log('Demographic data recorded') },
+	  getCurIter: function() { return this.current_iteration },
+	  getCurImg: function() { return thiscurrent_img },
+      onImgsLoaded:     function() { console.log('Images loaded')    },
+      onGotNewEmail:   function() { console.log('New user, need demographics')     },
+	  onGotKnowmEmail:   function() { console.log('Known user, retrieved demographics')     },
+      onGotDemographics: function() { console.log('Demographic data recorded') },
       onAcknowledge: function() { console.log('Starting the test') },
-	  onFixation_timeout: function() { console.log('End of fixation stimulus') },
+	  onFixationTimeout: function() { console.log('End of fixation stimulus') },
 	  onResponse: function() { console.log('EFE challenge responded') },
-	  onFinish: function() { console.log('All EFE challenges completed') },
+	  onFinish: function() { console.log('All EFE challenges completed') }
     }
   });
+  
+ // AVAILABLE TRANSITION FUNCTIONS
+ // machine.imgs_loaded() 
+ // machine.got_new_email() 
+ // machine.got_known_email() 
+ // machine.got_demographics()
+ // machine.acknowledge()
+ // machine.fixation_timeout()
+ // machine.response()
+ // machine.finish()
+ 
+ // HELPERS
+ // machine.is(fixation)
+ // machine.can(response)
+ // machine.cannot(finish)
+ // machine.transitions()
+ 
+ 
+ 
