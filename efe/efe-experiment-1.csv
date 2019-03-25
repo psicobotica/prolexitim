@@ -1,6 +1,11 @@
-series,trial,image
-1,1,image-1-1.jpg
-1,2,image-1-2.jpg
-1,3,image-1-3.jpg
-1,4,image-1-4.jpg
-2,1,image-2-1.jpg
+series,trial,image1,image2,emotion1,emotion2,sex1,sex2
+1,1,adult-female-anger-1.jpg,adult-female-neutral-1.jpg,anger,neutral,female,female
+1,2,adult-female-anger-2.jpg,adult-female-kiss-2.jpg,anger,kiss,female,female
+1,3,adult-female-anger-3.jpg,adult-female-right-3.jpg,anger,right,female,female
+1,4,adult-female-anger-4.jpg,adult-female-left-1.jpg,anger,left,female,female
+1,5,adult-female-anger-5.jpg,adult-female-neutral-5.jpg,anger,neutral,female,female
+1,6,adult-female-anger-1.jpg,adult-female-fear-1.jpg,anger,fear,female,female
+1,7,adult-female-anger-2.jpg,adult-female-disgust-1.jpg,anger,disgust,female,female
+1,8,adult-female-anger-3.jpg,adult-female-joy-1.jpg,anger,joy,female,female
+1,9,adult-female-anger-4.jpg,adult-female-open-1.jpg,anger,open,female,female
+1,10,adult-female-anger-5.jpg,adult-female-kiss-1.jpg,anger,kiss,female,female

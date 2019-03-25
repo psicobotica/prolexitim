@@ -7,6 +7,7 @@ body {
 	padding: 10px 20px 10px 20px;
 	border-radius: 20px;
 	margin-left: 20px;
+	width: 1024px
 }
 
 #main_panel {
@@ -15,4 +16,5 @@ body {
 	padding: 10px 20px 10px 20px;
 	border-radius: 20px;
 	margin-left: 20px;
+	width: 1024px
 }

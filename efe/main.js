@@ -8,11 +8,23 @@ DataFrame.fromCSV('http://psicobotica.com/prolexitim/efe/efe-experiment-1.csv').
 // Experiment data
 var series = []; 
 var trials = [];
-var imagefiles = [];
+var image1Files = [];
+var image2Files = [];
+
+var bitmaps1 = [];
+var bitmaps1Index = 0; 
+
+var bitmaps2 = [];
+var bitmaps2Index = 0; 
 
 var curSerie = 0; 
 var curTrial = 0;
-var curImageFile = ""; 
+
+var email = null;
+var codigo = null;
+var csv_row = ""; 
+var sep = ",";
+var tiempo = 0; 
 
 
 // Finite State Machine definition for EFE Test 
@@ -38,8 +50,8 @@ var curImageFile = "";
     methods: {
 	  getCurIter: function() { return this.current_iteration },
 	  getCurImg: function() { return thiscurrent_img },
-	  onExperimentLoaded:     function() { console.log('Experiment loaded')    },
-      onImgagesLoaded:     function() { console.log('Images loaded')    },
+	  onExperimentLoaded:     function() { loadAllImages() },
+      onImagesLoaded:     function() { doWelcome()   },
       onGotNewEmail:   function() { console.log('New user, need demographics')     },
 	  onGotKnowmEmail:   function() { console.log('Known user, retrieved demographics')     },
       onGotDemographics: function() { console.log('Demographic data recorded') },
@@ -49,6 +61,32 @@ var curImageFile = "";
 	  onFinish: function() { console.log('All EFE challenges completed') }
     }
   });
+
+function doWelcome()
+{
+	console.log("Entering welcome...")
+	document.getElementById("status_body").innerHTML = 
+		"Estado: " + machine.state;
+	getEmail();
+	document.getElementById("status_body").innerHTML = 
+		"Estado: " + machine.state;
+}
+
+function getEmail() {
+	while (email == null || email == "") {
+		email = prompt("Introduce tu dirección de correo electrónico. Este formulario es totalmente anónimo.");
+	}
+}
+  
+function loadAllImages(){
+  console.log('Experiment loaded'); 
+  loadImages(image1Files,image2Files,function(){console.log('All images1 loaded.')},function(){console.log('All images2 loaded.')});
+ 	
+  document.getElementById("status_body").innerHTML = 
+		"Estado: " + machine.state;
+}
+
+
   
  // AVAILABLE TRANSITION FUNCTIONS
  // machine.imgsLoaded() 
@@ -66,6 +104,56 @@ var curImageFile = "";
  // machine.cannot(finish)
  // machine.transitions()
  
+ function loadImages(uris1, uris2, allImages1LoadedCallback, allImages2LoadedCallback)
+ {
+	console.log("Loading images...");
+	var loadedCounter1 = 0; 
+	var toBeLoadedNumber1 = uris1.length; 
+
+	var loadedCounter2 = 0; 
+	var toBeLoadedNumber2 = uris2.length; 
+
+	uris1.forEach(function(uri){
+		preloadImage1("stimuli/"+uri, function(){
+			loadedCounter1++;
+			console.log("Number of loaded images1: " + loadedCounter1);
+			if (loadedCounter1 == toBeLoadedNumber1) {
+				allImages1LoadedCallback();
+			}
+		});
+	});
+	
+	uris2.forEach(function(uri){
+		preloadImage2("stimuli/"+uri, function(){
+			loadedCounter2++;
+			console.log("Number of loaded images2: " + loadedCounter2);
+			if (loadedCounter2 == toBeLoadedNumber2) {
+				allImages2LoadedCallback();
+				
+				// transition the machine
+				machine.imagesLoaded();
+			}
+		});
+	});
+	
+	function preloadImage1(url, anImage1LoadedCallback){
+		console.log("Loading image1: " + url);
+		bitmaps1[bitmaps1Index] = new Image();
+		bitmaps1[bitmaps1Index].onload = anImage1LoadedCallback;
+		bitmaps1[bitmaps1Index].src = url; 
+		bitmaps1Index++;
+	}
+		
+	function preloadImage2(url, anImage2LoadedCallback){
+		console.log("Loading image2: " + url);
+		bitmaps2[bitmaps2Index] = new Image();
+		bitmaps2[bitmaps2Index].onload = anImage2LoadedCallback;
+		bitmaps2[bitmaps2Index].src = url; 
+		bitmaps2Index++;
+	}
+ }
+	
+
  
  function loadExperiment(df)
  {
@@ -73,17 +161,18 @@ var curImageFile = "";
 	// console.log(df.show()); 
 	series = df.select("series").toArray();
 	trials = df.select("trial").toArray();
-	imagefiles = df.select("image").toArray();
-	
-	// transition the machine
-	machine.experimentLoaded();
+	image1Files = df.select("image1").toArray();
+	image2Files = df.select("image2").toArray();
 	
 	document.getElementById("status").style.visibility = "visible";
 	document.getElementById("status_body").innerHTML = 
-		"Estado: " + machine.state + ". Cargado: " + series.length + " series y " + trials.length + " ensayos.";
+		"Estado: " + machine.state + ". Cargado: " + trials.length + " ensayos.";
 	console.log(series.toString());
 	console.log(trials.toString());
-	console.log(imagefiles.toString());
+	console.log(image1Files.toString());
+	console.log(image2Files.toString());
 	
+	// transition the machine
+	machine.experimentLoaded();
 	
  }
