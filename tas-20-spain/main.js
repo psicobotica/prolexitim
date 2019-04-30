@@ -163,7 +163,7 @@ function check() {
 		todorespondido = false;
 	} else {
 		document.getElementById("button_comp").disabled = false;
-		alert("¡Tus respuestas han sido procesadas!. Completa unos últimos datos y haz click en enviar más abajo para entregar el formulario.")
+		alert("¡Tus respuestas han sido procesadas! Completa unos últimos datos y haz clic en [enviar] más abajo para entregar el formulario.")
 	}
 
 
