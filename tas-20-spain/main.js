@@ -259,7 +259,7 @@ function check1() {
 			document.getElementById("button_comp").disabled = true;
 			<!-- setCookie(codigo, csv_row, 365); -->
 			localStorage.setItem("tas20_" + codigo, csv_row);
-			alert("¡Perfecto! Has terminado el formulario. Haz click en Enviar para terminar");
+			alert("¡Perfecto! Has terminado el formulario. Haz clic en Enviar para terminar");
 	} 
 
 
