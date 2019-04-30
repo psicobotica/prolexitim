@@ -14,7 +14,7 @@ alert("Bienvenido al test TAS20");
 
 function getEmail() {
 	while (email == null || email == "") {
-		email = prompt("Introduce tu dirección de correo electrónica. Este formulario es totalmente anónimo.");
+		email = prompt("Introduce tu dirección de correo electrónico. Este formulario es totalmente anónimo.");
 	}
 }
 
