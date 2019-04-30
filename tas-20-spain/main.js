@@ -253,6 +253,7 @@ function check1() {
 		todorespondido1 = false;
 	}   else {	
 			csv_row += sep + sexo + sep + genero + sep + edad + sep + manoDominante + sep + estudios + sep + clase + sep + numhermanos + sep + posicionhermanao + sep + origen + sep + residencia + sep + tiempoenresidencia + sep + etnia + sep + oficio;	
+			document.getElementById("csv").value = csv_row;
 			document.getElementById("after_submit2").style.visibility = "visible";
 			document.getElementById("data_correct").innerHTML = "DATOS: " + csv_row;
 			document.getElementById("button_enviar").disabled = false;
