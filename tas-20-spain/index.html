@@ -424,8 +424,14 @@ Recuerde que las respuestas son anónimas. </h4>
 
 <h3>Variables sociodemográficas </h3>
 
-<form id = 'aenviar' name = "aenviar" action="https://formspree.io/raul.arrabales@serendeepia.com" method="POST">
 
+<!-- <form id = 'aenviar' name = "aenviar" action="https://formspree.io/raul.arrabales@serendeepia.com" method="POST"> -->
+<form id = 'aenviar' name = "aenviar" action="/cgi-bin/formmail.pl" method="POST">
+
+    <input type="hidden" name="recipient" value="raul.arrabales@serendeepia.com">
+	<input type="hidden" name="subject" value="TAS-20 spain Form">
+	<input type="hidden" name="title" value="FORMULARIO ENVIADO. GRACIAS.">
+	
 	<input type="hidden" id="Total" name = "Total"  value= 0>
 	<input type="hidden" id="F1" name = "F1" value= 0>
 	<input type="hidden" id="F2" name = "F2" value= 0>
