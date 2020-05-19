@@ -13,7 +13,10 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Obtener Resultados";
+	document.getElementById("nextBtn").style.display = "none";
+	document.getElementById("prevBtn").style.display = "none";
+	submission_btn.innerHTML = "Obtener Resultados";
+	submission_btn.id = "button_enviar";
   } else {
     document.getElementById("nextBtn").innerHTML = "Siguiente";
   }
@@ -33,7 +36,7 @@ function nextPrev(n) {
   // if you have reached the end of the form... :
   if (currentTab >= x.length) {
     //...the form gets submitted:
-    document.getElementById("regForm").submit();
+    // document.getElementById("regForm").submit();
     return false;
   }
   // Otherwise, display the correct tab:
