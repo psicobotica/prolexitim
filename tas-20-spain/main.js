@@ -1,6 +1,6 @@
 
 var currentTab = 0; // Current tab is set to be the first tab (0)
-showTab(currentTab); // Display the current tab
+
 
 function showTab(n) {
   // This function will display the specified tab of the form ...
@@ -13,9 +13,9 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Submit";
+    document.getElementById("nextBtn").innerHTML = "Obtener Resultados";
   } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
+    document.getElementById("nextBtn").innerHTML = "Siguiente";
   }
   // ... and run a function that displays the correct step indicator:
   fixStepIndicator(n)
