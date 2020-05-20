@@ -33,6 +33,13 @@ input {
   border: 1px solid #aaaaaa;
 }
 
+select {
+  padding: 10px;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
   background-color: #ffdddd;

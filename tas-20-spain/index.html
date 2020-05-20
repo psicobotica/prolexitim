@@ -459,14 +459,16 @@ Conteste lo más sinceramente posible. No piense mucho las respuestas. Recuerde 
 
 
 <div class="tab">
-  <!-- <p style="text-align: center;"><strong>Contacto y Variables Sociodemográficas</strong></p> -->
+    <p style="text-align: center;">Por último, indícanos tus datos demográficos y obtén los resultados:</p>
   
-	<strong>Edad: </strong><input type ="number" name = "Age" min = "18" max="100" step="1">
+	<strong>Edad: </strong><input type="number" name="Age" min="18" max="100" step="1" value="18">
 	<br>&nbsp;<br>
 	<strong>Género: </strong>
-	<label><input type = "radio" id = "mc" name = "Gender" value = 2><div></div> Mujer </label>
-	<label><input type = "radio" id = "mc" name = "Gender" value = 1><div></div> Hombre </label>
-	<label><input type = "radio" id = "mc" name = "Gender" value = 3><div></div> Otro </label>
+	<select name="Gender" id="Gender">
+	  <option value=2>Mujer</option>
+	  <option value=1>Hombre</option>
+	  <option value=3>Otro</option>
+	</select>
 	<br>&nbsp;<br>
 	<strong>Correo Electrónico:&nbsp;</Strong><input id="input-email" type="text" name="Email">
 	
@@ -481,7 +483,7 @@ Conteste lo más sinceramente posible. No piense mucho las respuestas. Recuerde 
 	<input type="hidden" id="F3" name = "F3" value= 0>
 	<input type="hidden" id="Code" name = "Code" value= "">
 
-	<br>&nbsp;<br>
+<div id="ErrorMsg2"><br>&nbsp;</div>
 
 <div style="overflow:auto;">
   <div style="float:center;">
@@ -490,13 +492,12 @@ Conteste lo más sinceramente posible. No piense mucho las respuestas. Recuerde 
 </div>
 	
 </div>
-
 <div id="ErrorMsg"></div>
 
 <br>
 
 <div style="overflow:auto;">
-  <div style="float:right;">
+  <div style="float:center;">
     <button type="button" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
     <button type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
   </div>

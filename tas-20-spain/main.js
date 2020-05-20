@@ -1,5 +1,6 @@
 
 var currentTab = 0; // Current tab is set to be the first tab (0)
+var Tas20Items = new Array(); 
 
 
 function showTab(n) {
@@ -45,7 +46,7 @@ function nextPrev(n) {
 
 function validateForm() {
   // This function deals with validation of each of the step questions
-  console.log("checking step...");
+  // console.log("checking step...");
   
   var x, y, i, valid = true;
   var radio_value = 0;
@@ -72,6 +73,10 @@ function validateForm() {
   
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {
+	  
+	// Save the value. 
+	Tas20Items.push(parseInt(radio_value));
+	
 	document.getElementById("ErrorMsg").innerHTML = "";
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }
@@ -106,32 +111,8 @@ function EmailInvalid(inputText) {
 
 function check() {
 
-// 	console.log("checking form...");
-//	Se almacenan las respuestas en variables:
-
-	var respuestaF1_1 = parseInt(document.formtas20.questionF1_1.value);
-	console.log("F1_1: " + respuestaF1_1);
-	var respuestaF2_2 = parseInt(document.formtas20.questionF2_2.value);
-	var respuestaF1_3 = parseInt(document.formtas20.questionF1_3.value);
-	var respuestaF2_4 = parseInt(document.formtas20.questionF2_4.value);
-	var respuestaF3_5 = parseInt(document.formtas20.questionF3_5.value);
-	var respuestaF1_6 = parseInt(document.formtas20.questionF1_6.value);
-	var respuestaF1_7 = parseInt(document.formtas20.questionF1_7.value);
-	var respuestaF3_8 = parseInt(document.formtas20.questionF3_8.value);
-	var respuestaF1_9 = parseInt(document.formtas20.questionF1_9.value);
-	var respuestaF3_10 = parseInt(document.formtas20.questionF3_10.value);
-	var respuestaF2_11 = parseInt(document.formtas20.questionF2_11.value);
-	var respuestaF2_12 = parseInt(document.formtas20.questionF2_12.value);
-	var respuestaF1_13 = parseInt(document.formtas20.questionF1_13.value);
-	var respuestaF1_14 = parseInt(document.formtas20.questionF1_14.value);
-	var respuestaF3_15 = parseInt(document.formtas20.questionF3_15.value);
-	var respuestaF3_16 = parseInt(document.formtas20.questionF3_16.value);
-	var respuestaF2_17 = parseInt(document.formtas20.questionF2_17.value);
-	var respuestaF3_18 = parseInt(document.formtas20.questionF3_18.value);
-	var respuestaF3_19 = parseInt(document.formtas20.questionF3_19.value);
-	var respuestaF3_20 = parseInt(document.formtas20.questionF3_20.value);
-
-	var genero = parseInt(document.formtas20.Gender.value);
+	var genero_select = document.getElementById("Gender");
+	var genero = genero_select.options[genero_select.selectedIndex].value;
 	console.log("Genero:" + genero);
 	var edad = document.formtas20.Age.value;
 	console.log("Edad: " + edad);
@@ -142,91 +123,40 @@ function check() {
 	
 	var todorespondido = true;
 
-	if (Number.isNaN(respuestaF1_1)) {
-		alert("No has respondido a la pregunta 1.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF2_2)) {
-		alert("No has respondido a la pregunta 2.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF1_3)) {
-		alert("No has respondido a la pregunta 3.");
-		todorespondido = false;
-	}else if (Number.isNaN(respuestaF2_4)) {
-		alert("No has respondido a la pregunta 4.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF3_5)) {
-		alert("No has respondido a la pregunta 5.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF1_6)) {
-		alert("No has respondido a la pregunta 6.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF1_7)) {
-		alert("No has respondido a la pregunta 7.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF3_8)) {
-		alert("No has respondido a la pregunta 8.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF1_9)) {
-		alert("No has respondido a la pregunta 9.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF3_10)) {
-		alert("No has respondido a la pregunta 10.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF2_11)) {
-		alert("No has respondido a la pregunta 11.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF2_12)) {
-		alert("No has respondido a la pregunta 12.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF1_13)) {
-		alert("No has respondido a la pregunta 13.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF1_14)) {
-		alert("No has respondido a la pregunta 14.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF3_15)) {
-		alert("No has respondido a la pregunta 15.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF3_16)) {
-		alert("No has respondido a la pregunta 16.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF2_17)) {
-		alert("No has respondido a la pregunta 17.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF3_18)) {
-		alert("No has respondido a la pregunta 18.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF3_19)) {
-		alert("No has respondido a la pregunta 19.");
-		todorespondido = false;
-	} else if (Number.isNaN(respuestaF3_20)) {
-		alert("No has respondido a la pregunta 20.");
-		todorespondido = false;
-	} else if (Number.isNaN(genero)) {
-		alert("No has indicado tu identidad de género.");
+	if (Number.isNaN(genero)) {
+		// alert("No has indicado tu identidad de género.");
+		document.getElementById("ErrorMsg2").innerHTML = "<h4 style='color:red'>No has indicado tu identidad de género.</h4>";
 		todorespondido = false;
 	} else if ( edad < 18 || edad > 100) {
-		alert("No has indicado una edad válida.");
+		// alert("No has indicado una edad válida.");
+		document.getElementById("ErrorMsg2").innerHTML = "<h4 style='color:red'>No has indicado una edad válida.</h4>";
 		todorespondido = false;
 	} else if (EmailInvalid(email)) {
-		alert("El email introducido no es correcto.");
+		document.getElementById("ErrorMsg2").innerHTML = "<h4 style='color:red'>El email introducido no es correcto.</h4>";
+		// alert("El email introducido no es correcto.");
 		todorespondido = false;
 	} else if (!privacidad) {
-		alert("Es necesario que aceptes la política de privacidad.");
+		// alert("Es necesario que aceptes la política de privacidad.");
+		document.getElementById("ErrorMsg2").innerHTML = "<h4 style='color:red'>Es necesario que aceptes la política de privacidad.</h4>";
 		todorespondido = false; 
 	}
 
 
 	if (todorespondido) {
+		
+		var results_str = ""; 
 
 		var puntosF1 = 0;
-		puntosF1 = respuestaF1_1 + respuestaF1_3 + respuestaF1_6 + respuestaF1_7 + respuestaF1_9 + respuestaF1_13 + respuestaF1_14;
+		// respuestaF1_1 + respuestaF1_3 + respuestaF1_6 + respuestaF1_7 + respuestaF1_9 + respuestaF1_13 + respuestaF1_14;
+		puntosF1 = Tas20Items[0] + Tas20Items[2] + Tas20Items[5] + Tas20Items[6] + Tas20Items[8] + Tas20Items[12] + Tas20Items[13];
 
 		var puntosF2 = 0;
-		puntosF2 = respuestaF2_2 + respuestaF2_4 + respuestaF2_11 + respuestaF2_12 + respuestaF2_17;
+		// respuestaF2_2 + respuestaF2_4 + respuestaF2_11 + respuestaF2_12 + respuestaF2_17;
+		puntosF2 = Tas20Items[1] + Tas20Items[3] + Tas20Items[10] + Tas20Items[11] + Tas20Items[16];
 
 		var puntosF3 = 0;
-		puntosF3 = respuestaF3_5 + respuestaF3_8 + respuestaF3_10 + respuestaF3_15 + respuestaF3_16 + respuestaF3_18 + respuestaF3_19 + respuestaF3_20;
+		// respuestaF3_5 + respuestaF3_8 + respuestaF3_10 + respuestaF3_15 + respuestaF3_16 + respuestaF3_18 + respuestaF3_19 + respuestaF3_20;		
+		puntosF3 = Tas20Items[4] + Tas20Items[7] + Tas20Items[9] + Tas20Items[14] + Tas20Items[15] + Tas20Items[17] + Tas20Items[18] + Tas20Items[19];
 
 		var total = puntosF1 + puntosF2 + puntosF3;
 		
@@ -240,9 +170,25 @@ function check() {
 		document.getElementById("input-email").value = email;
 		document.getElementById("Code").value = md5(email);		
 		
-		document.getElementById("thanksMsg").innerHTML = "<h4>Gracias. Datos recibidos correctamente.</h4>";
-		document.getElementById("results").innerHTML = "Has obtenido un total de " + puntos[0] + " puntos. " 
-		+ "(F1: " + puntos[1] + "; F2: " + puntos[2] + "; F3: " + puntos[3] + ").";	
+		document.getElementById("thanksMsg").innerHTML = "<h4 style='color:green'>Gracias. Datos recibidos correctamente.</h4>";
+		
+		results_str = "<p style='text-align:left'>Has obtenido un total de <strong>" + puntos[0] + " puntos</strong> en el cuestionario TAS-20.<br>" 
+		+ "<strong>F1</strong> (Confusión de la emoción con sensaciones físicas): " + puntos[1] + ".<br>"
+		+ "<strong>F2</strong> (Dificultad para comunicar sentimientos): " + puntos[2] + ".<br>"
+		+ "<strong>F3</strong> (Pensamiento operatorio): " + puntos[3] + ".</p>" 
+		+ "<p style='text-align:left'>Estos resultados indican ";
+		
+		if (total >= 61) {
+			// Clara alexitimia
+			results_str += "un alto grado de alexitimia.</p>";
+		} else if (total <= 51) {
+			// Ausencia de alexitimia
+			results_str += "ausencia de alexitimia.</p>";
+		} else {
+			// Posible alexitimia
+			results_str += "la posible presencia de alexitimia.</p>";
+		}
+		document.getElementById("results").innerHTML = results_str;
 	}
 	
 	return todorespondido; 
