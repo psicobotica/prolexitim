@@ -15,8 +15,8 @@ function showTab(n) {
   if (n == (x.length - 1)) {
 	document.getElementById("nextBtn").style.display = "none";
 	document.getElementById("prevBtn").style.display = "none";
-	submission_btn.innerHTML = "Obtener Resultados";
-	submission_btn.id = "button_enviar";
+	// submission_btn.innerHTML = "Obtener Resultados";
+	// submission_btn.id = "button_enviar";
   } else {
     document.getElementById("nextBtn").innerHTML = "Siguiente";
   }
@@ -44,22 +44,35 @@ function nextPrev(n) {
 }
 
 function validateForm() {
-  // This function deals with validation of the form fields
+  // This function deals with validation of each of the step questions
+  console.log("checking step...");
+  
   var x, y, i, valid = true;
+  var radio_value = 0;
+  
+  // Get current radio button response
   x = document.getElementsByClassName("tab");
   y = x[currentTab].getElementsByTagName("input");
-  // A loop that checks every input field in the current tab:
-  for (i = 0; i < y.length; i++) {
-    // If a field is empty...
-    if (y[i].value == "") {
-      // add an "invalid" class to the field:
-      y[i].className += " invalid";
-      // and set the current valid status to false:
-      valid = false;
+
+  // Get radio buttons state
+  for(var i = 0; i < y.length; i++){
+    if(y[i].checked){
+        radio_value = y[i].value;
     }
   }
+  
+  // If the field is zero
+  if (radio_value == 0) {
+      // add an "invalid" class to the field:
+      // Not for radio buttons... y[i].className += " invalid";
+      // and set the current valid status to false:
+	  document.getElementById("ErrorMsg").innerHTML = "<h4 style='color:red'>Por favor, indica en qué grado esta afirmación se ajusta a tu modo de ser habitual.</h4>";
+      valid = false;
+  }
+  
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {
+	document.getElementById("ErrorMsg").innerHTML = "";
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }
   return valid; // return the valid status
@@ -93,7 +106,7 @@ function EmailInvalid(inputText) {
 
 function check() {
 
-	console.log("checking form...");
+// 	console.log("checking form...");
 //	Se almacenan las respuestas en variables:
 
 	var respuestaF1_1 = parseInt(document.formtas20.questionF1_1.value);
