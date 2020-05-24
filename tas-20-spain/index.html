@@ -474,8 +474,12 @@
 	<strong>Correo Electrónico:&nbsp;</Strong><input id="input-email" type="text" name="Email">
 	
 	<br>&nbsp;<br>
+	
 	<input type="checkbox" id="Privacidad" name="Privacidad" value="Acepta">
     <label for="Privacidad"> He leído y acepto la <a href="https://www.psicobotica.com/legal-privacidad/" target="_blank">política de privacidad de datos</a>. </label><br>
+	
+    
+	<br>
 
 
 	<input type="hidden" id="TAS20" name = "TAS20"  value= 0>
@@ -538,7 +542,6 @@
 </div>
 
 <div id="thanksMsg"></div>
-
 <div id="results"></div>
 
 <script>
@@ -552,13 +555,14 @@ var $form = $('form#formtas20'),
 $('#button_enviar').on('click', function(e) {
   e.preventDefault();
   if (check()) {
+    document.getElementById("fullForm").innerHTML = " ";
 	var jqxhr = $.ajax({
 		url: url,
 		method: "GET",
 		dataType: "json",
 		data: $form.serializeObject(),
 		success: function(response){
-			document.getElementById("fullForm").innerHTML = " ";		
+			document.getElementById("fullForm").innerHTML = " ";
 		}
 	});
 	}
