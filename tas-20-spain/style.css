@@ -8,6 +8,32 @@ body {
 	background-color: #f1f1f1;
 }
 
+#headtas {
+  width: 80%;
+  margin-right: auto; 
+  margin-left: auto;
+  margin:0 auto;
+  min-width: 420px;
+  max-width: 720px;	
+}
+
+#thanksMsg {
+  width: 80%;
+  margin-right: auto; 
+  margin-left: auto;
+  margin:0 auto;
+  min-width: 420px;
+  max-width: 720px;	
+}
+
+#results {
+  width: 80%;
+  margin-right: auto; 
+  margin-left: auto;
+  margin:0 auto;
+  min-width: 420px;
+  max-width: 720px;	
+}
 
 /* Style the form */
 #formtas20 {
@@ -15,7 +41,8 @@ body {
   margin: 20px auto;
   padding: 40px;
   width: 80%;
-  min-width: 360px;
+  min-width: 420px;
+  max-width: 720px;
 }
 
 .center {

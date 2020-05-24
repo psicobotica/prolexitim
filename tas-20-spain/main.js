@@ -172,7 +172,7 @@ function check() {
 		
 		document.getElementById("thanksMsg").innerHTML = "<h4 style='color:green'>Gracias. Datos recibidos correctamente.</h4>";
 		
-		results_str = "<p style='text-align:left'>Has obtenido un total de <strong>" + puntos[0] + " puntos</strong> en el cuestionario TAS-20.<br>" 
+		results_str = "<p style='text-align:left'>Has obtenido un total de <strong>" + puntos[0] + " puntos</strong> en el cuestionario TAS-20.<br>&nbsp;<br>" 
 		+ "<strong>F1</strong> (Confusión de la emoción con sensaciones físicas): " + puntos[1] + ".<br>"
 		+ "<strong>F2</strong> (Dificultad para comunicar sentimientos): " + puntos[2] + ".<br>"
 		+ "<strong>F3</strong> (Pensamiento operatorio): " + puntos[3] + ".</p>" 
@@ -180,14 +180,21 @@ function check() {
 		
 		if (total >= 61) {
 			// Clara alexitimia
-			results_str += "un alto grado de alexitimia.</p>";
+			results_str += "<b><u>un alto grado de alexitimia</u></b>.</p>";
 		} else if (total <= 51) {
 			// Ausencia de alexitimia
-			results_str += "ausencia de alexitimia.</p>";
+			results_str += "<b><u>ausencia de alexitimia</u></b>.</p>";
 		} else {
 			// Posible alexitimia
-			results_str += "la posible presencia de alexitimia.</p>";
+			results_str += "<b><u>la posible presencia de alexitimia</u></b>.</p>";
 		}
+		
+		// Call to action (psy attention):
+		results_str += "<p>Para interpretar estos resultados correctamente, puedes consultar en el <a href='https://www.psicobotica.com/blog/' target='_blank'>blog de Psicobōtica </a> los <a href='https://www.psicobotica.com/blog/' target='_blank'>artículos sobre alexitimia</a>. Si sientes que necesitas ayuda con la gestión de las emociones, no dudes en solicitarnos una <a href='https://www.psicobotica.com/atencion-psicologica-online/' target='_blank'>entrevista online gratuita</a>.</p><hr>";
+		
+		// Call to action (prolexitim NLP):
+		results_str += "<p><a href='https://psicobotica.com/prolexitim/nlp/index.html' target='_blank'><img style='float:right' src='captura_nlp.jpg'></a><strong>¿Quieres saber más sobre tus emociones?</strong> <a href='https://psicobotica.com/prolexitim/nlp/index.html' target='_blank'>Accede aquí al test Prolexitim NLP</a>, un test basado en tu expresión verbal. Te mostraremos unas imágenes que tendrás que describir y analizaremos tus narrativas automáticamente utilizando Inteligencia Artificial.</p>";
+		
 		document.getElementById("results").innerHTML = results_str;
 	}
 	
