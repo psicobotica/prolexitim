@@ -36,11 +36,12 @@ body {
   max-width: 720px;	
   background-color: #ffffff;
   padding-left: 50px;
-  padding-top: 50px;
-  padding-bottom: 250px;
+  padding-top: 15px;
+  padding-bottom: 150px;
   padding-right: 50px;
   font-size: 17px;
   line-height: 1.5;
+  display: none;  /* Not visible at the beginning */
 }
 
 /* Style the form */
@@ -89,59 +90,6 @@ select {
   user-select: none;
 }
 
-/* Hide the browser's default checkbox 
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-} */
-
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #ccc;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #aaa;
-}
-
-/* When the checkbox is checked, add a green background */
-.container input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
 
 
 /* Mark input boxes that gets an error on validation: */
@@ -202,24 +150,11 @@ table {
 }
 
 
-
-
-#after_submit {
-	visibility: hidden;
-	background: #ddeedd;
-	padding: 10px 20px 10px 20px;
-	border-radius: 20px;
-	margin-left: 20px;
+input[type="checkbox"] {
+   height: 30px;
+   width: 30px;
+   display: inline-block;
 }
-
-#after_submit2 {
-	visibility: hidden;
-	background: #ddeedd;
-	padding: 10px 20px 10px 20px;
-	border-radius: 20px;
-	margin-left: 20px;
-}
-
 
 input[type="radio"] {
    display: none;
