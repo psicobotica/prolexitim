@@ -149,9 +149,14 @@ function check() {
 		results_str = "<p style='text-align:center'>Recibirás los resultados de esta prueba por correo electrónico. Necesitamos ejecutar algoritmos complejos de procesamiento del lenguaje y eso puede llevarnos algún tiempo.</p>";
 		
 		// Call to action (psy attention):
-		results_str += "<p>Para comprender en detalle el funcionamiento de la prueba que has realizado, puedes consultar en el <a href='https://www.psicobotica.com/blog/' target='_blank'>blog de Psicobotica </a> los <a href='https://www.psicobotica.com/blog/' target='_blank'>artículos sobre alexitimia</a>. Si sientes que necesitas ayuda con la gestión de las emociones, no dudes en solicitarnos una <a href='https://www.psicobotica.com/atencion-psicologica-online/' target='_blank'>entrevista online gratuita</a>.</p><hr>";
+		results_str += "<p>Para comprender en detalle el funcionamiento de la prueba que has realizado, puedes consultar en el blog de Psicobotica los <a href='https://www.psicobotica.com/blog/' target='_blank'>artículos sobre procesamiento del lenguaje</a>. Si sientes que necesitas ayuda con la gestión de las emociones, no dudes en solicitarnos una <a href='https://www.psicobotica.com/atencion-psicologica-online/' target='_blank'>entrevista online gratuita</a>.</p><hr>";
+		
+		// Call to action (other tests):
+		results_str += "<p><a href='https://www.psicobotica.com/atencion-psicologica-online/test-psicologicos/' target='_blank'><img style='float:left' src='alexitimia_320x236.jpg'></a><strong>¿Quieres conocerte un poco mejor?</strong><br>&nbsp;<br><a href='https://www.psicobotica.com/atencion-psicologica-online/test-psicologicos/' target='_blank'>Accede aquí al centro de Tests Psicológicos de Psicobōtica</a>, donde puedes obtener una evaluación al instante sobre diferentes aspectos o problemas psicológicos.</p>";
 		
 		document.getElementById("results").innerHTML = results_str;
+		document.getElementById("results").style.visibility = "visible";
+		document.getElementById("results").style.display = "block";
 	}
 	
 	return todorespondido; 

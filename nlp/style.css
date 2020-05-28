@@ -15,7 +15,6 @@ img {
   margin-right: auto;
 }
 
-
 #headnlp {
   width: 80%;
   margin-right: auto; 
@@ -54,11 +53,12 @@ img {
   max-width: 720px;	
   background-color: #ffffff;
   padding-left: 50px;
-  padding-top: 50px;
-  padding-bottom: 250px;
+  padding-top: 15px;
+  padding-bottom: 150px;
   padding-right: 50px;
   font-size: 17px;
   line-height: 1.5;
+  display: none;  /* Not visible at the beginning */
 }
 
 /* Style the input fields */
@@ -71,14 +71,14 @@ textarea {
 
 input {
   padding: 10px;
-  font-size: 14px;
+  font-size: 17px;
   font-family: Raleway;
   border: 1px solid #aaaaaa;
 }
 
 select {
   padding: 10px;
-  font-size: 14px;
+  font-size: 17px;
   font-family: Raleway;
   border: 1px solid #aaaaaa;
 }
@@ -87,7 +87,6 @@ select {
 input.invalid {
   background-color: #ffdddd;
 }
-
 
 /* Hide all steps by default: */
 .tab {

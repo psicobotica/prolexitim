@@ -174,7 +174,7 @@ function check() {
 		document.getElementById("input-email").value = email;
 		document.getElementById("Code").value = md5(email);		
 		
-		document.getElementById("thanksMsg").innerHTML = "<h4 style='color:green'>Gracias. Datos recibidos correctamente.</h4>";
+		document.getElementById("thanksMsg").innerHTML = "<h4 style='color:green; text-align:center'>Gracias. Datos recibidos correctamente.</h4>";
 		
 		results_str = "<p style='text-align:left'>Has obtenido un total de <u><strong>" + puntos[0] + " puntos</strong></u> en el cuestionario TAS-20.<br>&nbsp;<br>" 
 		+ "La puntuación del TAS-20 corresponde a estos tres factores:<br>"
