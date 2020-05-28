@@ -8,7 +8,7 @@ body {
 	background-color: #f1f1f1;
 }
 
-#headphq {
+#headtas {
   width: 80%;
   margin-right: auto; 
   margin-left: auto;
@@ -45,7 +45,7 @@ body {
 }
 
 /* Style the form */
-#formphq9 {
+#formtas20 {
   background-color: #ffffff;
   margin: 20px auto;
   padding: 40px;
@@ -74,6 +74,20 @@ select {
   font-size: 17px;
   font-family: Raleway;
   border: 1px solid #aaaaaa;
+}
+
+/* Label container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 1px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 
@@ -136,6 +150,11 @@ table {
 }
 
 
+input[type="checkbox"] {
+   height: 30px;
+   width: 30px;
+   display: inline-block;
+}
 
 input[type="radio"] {
    display: none;
