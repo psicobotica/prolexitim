@@ -1,6 +1,6 @@
 
 var currentTab = 0; // Current tab is set to be the first tab (0)
-var Tas20Items = new Array(); 
+var BAIItems = new Array(); 
 
 
 function showTab(n) {
@@ -49,7 +49,7 @@ function validateForm() {
   // console.log("checking step...");
   
   var x, y, i, valid = true;
-  var radio_value = 0;
+  var radio_value = -1;
   
   // Get current radio button response
   x = document.getElementsByClassName("tab");
@@ -62,12 +62,12 @@ function validateForm() {
     }
   }
   
-  // If the field is zero
-  if (radio_value == 0) {
+  // If the field is not set
+  if (radio_value == -1) {
       // add an "invalid" class to the field:
       // Not for radio buttons... y[i].className += " invalid";
       // and set the current valid status to false:
-	  document.getElementById("ErrorMsg").innerHTML = "<h4 style='color:red'>Por favor, indica en qué grado esta afirmación se ajusta a tu modo de ser habitual.</h4>";
+	  document.getElementById("ErrorMsg").innerHTML = "<h4 style='color:red'>Por favor, indica el grado en que has sido afectado/a por este síntoma.</h4>";
       valid = false;
   }
   
@@ -75,7 +75,7 @@ function validateForm() {
   if (valid) {
 	  
 	// Save the value. 
-	Tas20Items.push(parseInt(radio_value));
+	BAIItems.push(parseInt(radio_value));
 	
 	document.getElementById("ErrorMsg").innerHTML = "";
     document.getElementsByClassName("step")[currentTab].className += " finish";
@@ -118,11 +118,11 @@ function check() {
 	var genero_select = document.getElementById("Gender");
 	var genero = genero_select.options[genero_select.selectedIndex].value;
 	console.log("Genero:" + genero);
-	var edad = document.formtas20.Age.value;
+	var edad = document.formbai.Age.value;
 	console.log("Edad: " + edad);
-	var email = document.formtas20.Email.value;
+	var email = document.formbai.Email.value;
 	console.log("Email: " + email);
-	var privacidad = document.formtas20.Privacidad.checked; 
+	var privacidad = document.formbai.Privacidad.checked; 
 	console.log("Privacidad: " + privacidad);
 	
 	var todorespondido = true;
@@ -150,52 +150,38 @@ function check() {
 		
 		var results_str = ""; 
 
-		var puntosF1 = 0;
-		// respuestaF1_1 + respuestaF1_3 + respuestaF1_6 + respuestaF1_7 + respuestaF1_9 + respuestaF1_13 + respuestaF1_14;
-		puntosF1 = Tas20Items[0] + Tas20Items[2] + Tas20Items[5] + Tas20Items[6] + Tas20Items[8] + Tas20Items[12] + Tas20Items[13];
-
-		var puntosF2 = 0;
-		// respuestaF2_2 + respuestaF2_4 + respuestaF2_11 + respuestaF2_12 + respuestaF2_17;
-		puntosF2 = Tas20Items[1] + Tas20Items[3] + Tas20Items[10] + Tas20Items[11] + Tas20Items[16];
-
-		var puntosF3 = 0;
-		// respuestaF3_5 + respuestaF3_8 + respuestaF3_10 + respuestaF3_15 + respuestaF3_16 + respuestaF3_18 + respuestaF3_19 + respuestaF3_20;		
-		puntosF3 = Tas20Items[4] + Tas20Items[7] + Tas20Items[9] + Tas20Items[14] + Tas20Items[15] + Tas20Items[17] + Tas20Items[18] + Tas20Items[19];
-
-		var total = puntosF1 + puntosF2 + puntosF3;
+		var puntosBAI = 0;
 		
-		// Se almacena la puntuación total en una variable:
-		puntos = [total, puntosF1, puntosF2, puntosF3];
-
-		document.getElementById("TAS20").value = puntos[0];
-		document.getElementById("F1").value = puntos[1];
-		document.getElementById("F2").value = puntos[2];
-		document.getElementById("F3").value = puntos[3];
+		// Collect and sum all responses
+		for (i = 0; i < BAIItems.length; i++) {
+			puntosBAI += BAIItems[i];
+		}
+		
+		document.getElementById("BAI").value = puntosBAI;
 		document.getElementById("input-email").value = email;
 		document.getElementById("Code").value = md5(email);		
 		
 		document.getElementById("thanksMsg").innerHTML = "<h4 style='color:green; text-align:center'>Gracias. Datos recibidos correctamente.</h4>";
 		
-		results_str = "<p style='text-align:left'>Has obtenido un total de <u><strong>" + puntos[0] + " puntos</strong></u> en el cuestionario TAS-20.<br>&nbsp;<br>" 
-		+ "La puntuación del TAS-20 corresponde a estos tres factores:<br>"
-		+ "<strong>F1</strong> (Confusión de la emoción con sensaciones físicas): " + puntos[1] + ".<br>"
-		+ "<strong>F2</strong> (Dificultad para comunicar sentimientos): " + puntos[2] + ".<br>"
-		+ "<strong>F3</strong> (Pensamiento operatorio): " + puntos[3] + ".</p>" 
+		results_str = "<p style='text-align:left'>Has obtenido un total de <u><strong>" + puntosBAI + " puntos</strong></u> en el inventario de ansiedad BAI.<br>&nbsp;" 
 		+ "<p style='text-align:left'>Estos resultados indican ";
 		
-		if (total >= 61) {
-			// Clara alexitimia
-			results_str += "<b><u>un alto grado de alexitimia</u></b>.</p>";
-		} else if (total <= 51) {
-			// Ausencia de alexitimia
-			results_str += "<b><u>ausencia de alexitimia</u></b>.</p>";
+		if (puntosBAI >= 36) {
+			// Ansiedad severa
+			results_str += "<b><u>una ansiedad severa</u></b>.</p>";
+			results_str += "<p>En vista de estos resultados te recomendamos encarecidamente que contactes con un profesional de la salud. Puedes solicitarnos una <a href='https://www.psicobotica.com/atencion-psicologica-online/' target='_blank'>entrevista online gratuita</a>.</p>";
+		} else if (puntosBAI <= 21) {
+			// Ansiedad muy baja.
+			results_str += "<b><u>una ansiedad muy baja</u></b>.</p>";
+			results_str += "<p>Nos alegra saber que no tienes síntomas graves de ansiedad. No obstante, si te preocupa cualquier otra cosa, puedes solicitarnos una <a href='https://www.psicobotica.com/atencion-psicologica-online/' target='_blank'>entrevista online gratuita</a>.</p>";
 		} else {
-			// Posible alexitimia
-			results_str += "<b><u>la posible presencia de alexitimia</u></b>.</p>";
+			// Ansiedad moderada
+			results_str += "<b><u>una ansiedad moderada</u></b>.</p>";
+			results_str += "<p>Aunque no tienes síntomas muy severos de ansiedad te recomendamos que contactes con un profesional de la salud si ves que no puedes manejar adecuadamente la situación. Puedes solicitarnos una <a href='https://www.psicobotica.com/atencion-psicologica-online/' target='_blank'>entrevista online gratuita</a>.</p>";
 		}
 		
 		// Call to action (psy attention):
-		results_str += "<p>Para interpretar estos resultados correctamente, puedes consultar en el blog de Psicobōtica los <a href='https://www.psicobotica.com/blog/' target='_blank'>artículos sobre alexitimia</a>. Si sientes que necesitas ayuda con la gestión de las emociones, no dudes en solicitarnos una <a href='https://www.psicobotica.com/atencion-psicologica-online/' target='_blank'>entrevista online gratuita</a>.</p><hr>";
+		results_str += "<p>Para interpretar estos resultados correctamente, puedes consultar en el blog de Psicobōtica los <a href='https://www.psicobotica.com/blog/' target='_blank'>artículos sobre ansiedad</a>.</p><hr>";
 		
 		// Call to action (prolexitim NLP):
 		results_str += "<p><a href='https://psicobotica.com/prolexitim/nlp/index.html' target='_blank'><img style='float:left' src='narrativa_320x236.jpg'></a><strong>¿Quieres saber más sobre tus emociones?</strong><br>&nbsp;<br><a href='https://psicobotica.com/prolexitim/nlp/index.html' target='_blank'>Accede aquí al test Prolexitim NLP</a>, un test basado en tu expresión verbal. Te mostraremos unas imágenes que tendrás que describir y analizaremos tus narrativas automáticamente utilizando Inteligencia Artificial.</p>";
