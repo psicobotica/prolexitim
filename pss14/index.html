@@ -12,430 +12,346 @@
 	<script src = "main.js"></script>
 	<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src = "serialize-object.js"></script>
-	<script src = "cookie.js"></script>	
 	
 </head>
 
 <body>
 
-<div id="headbai">
+<div id="headpss">
 <img width="220" class="center" src="psicobotica_header_600.png">
 
 
 <h2 style="text-align: center;">Escala de Estrés Percibido (PSS-14)</h2>
 
-<p style="text-align: center;">Las preguntas en esta escala hacen referencia a sus sentimientos y pensamientos durante el último mes. En cada caso, por favor indique cómo usted se ha sentido o ha pensado en cada situación <b>en el último mes</b>. Recuerde que <strong>las respuestas son anónimas.</strong></p>
+<p style="text-align: center;">Las preguntas en esta escala hacen referencia a sus sentimientos y pensamientos <b>durante el último mes</b>. En cada caso, por favor indique cómo usted se ha sentido o ha pensado en cada situación. Recuerde que <strong>las respuestas son anónimas.</strong></p>
 <hr>
 </div>
 
 <div id="fullForm">
 
 <center>
-<form id="formbai" name="formbai">
+<form id="formpss" name="formpss">
 
 <!-- One "tab" for each step in the form: -->
 
 <div class="tab">
   <table>
-	<tr><td colspan=4><strong><big>1. Hormigueo o entumecimiento.</big></strong></td></tr>
+	<tr><td colspan=5><strong><big>1. ¿Con qué frecuencia ha estado afectado/a por algo que ha ocurrido inesperadamente?</big></strong></td></tr>
     <tr><td>&nbsp;</td></tr>
     <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_1" onclick="clearErrors()" value = 0><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_1" onclick="clearErrors()" value = 1><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_1" onclick="clearErrors()" value = 0><div></div></label></center></td>		
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_1" onclick="clearErrors()" value = 1><div></div></label></center></td>	
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_1" onclick="clearErrors()" value = 2><div></div></label></center></td>
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_1" onclick="clearErrors()" value = 3><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_1" onclick="clearErrors()" value = 4><div></div></label></center></td>
 	</tr>
 	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Nunca</b></i></center></td>		
+	<td style="vertical-align:top" width=120><center><i><b>Casi unca</b></i></center></td>	
+	<td style="vertical-align:top" width=120><center><i><b>De vez en cuando</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>A menudo</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Muy a menudo</b></i></center></td>
+	
 	</tr>
   </table>	
 </div>
 
 <div class="tab">
   <table>
-	<tr><td colspan=4><strong><big>2. Sensación de calor.</big></strong></td></tr>
+	<tr><td colspan=5><strong><big>2. ¿Con qué frecuencia se ha sentido incapaz de controlar las cosas importantes en su vida?</big></strong></td></tr>
     <tr><td>&nbsp;</td></tr>
     <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_2" onclick="clearErrors()" value = 0><div></div></label></center></td>	
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_2" onclick="clearErrors()" value = 0><div></div></label></center></td>		
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_2" onclick="clearErrors()" value = 1><div></div></label></center></td>	
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_2" onclick="clearErrors()" value = 2><div></div></label></center></td>
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_2" onclick="clearErrors()" value = 3><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_2" onclick="clearErrors()" value = 4><div></div></label></center></td>
 	</tr>
 	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Nunca</b></i></center></td>		
+	<td style="vertical-align:top" width=120><center><i><b>Casi unca</b></i></center></td>	
+	<td style="vertical-align:top" width=120><center><i><b>De vez en cuando</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>A menudo</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Muy a menudo</b></i></center></td>
+	
 	</tr>
   </table>	
 </div>
 
+
 <div class="tab">
   <table>
-	<tr><td colspan=4><strong><big>3. Temblor en las piernas.</big></strong></td></tr>
+	<tr><td colspan=5><strong><big>3. ¿Con qué frecuencia se ha sentido nervioso o estresado?</big></strong></td></tr>
     <tr><td>&nbsp;</td></tr>
     <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_3" onclick="clearErrors()" value = 0><div></div></label></center></td>	
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_3" onclick="clearErrors()" value = 0><div></div></label></center></td>		
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_3" onclick="clearErrors()" value = 1><div></div></label></center></td>	
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_3" onclick="clearErrors()" value = 2><div></div></label></center></td>
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_3" onclick="clearErrors()" value = 3><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_3" onclick="clearErrors()" value = 4><div></div></label></center></td>
 	</tr>
 	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Nunca</b></i></center></td>		
+	<td style="vertical-align:top" width=120><center><i><b>Casi unca</b></i></center></td>	
+	<td style="vertical-align:top" width=120><center><i><b>De vez en cuando</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>A menudo</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Muy a menudo</b></i></center></td>
+	
 	</tr>
   </table>	
 </div>
 
 <div class="tab">
   <table>
-	<tr><td colspan=4><strong><big>4. Incapacidad de relajarme.</big></strong></td></tr>
+	<tr><td colspan=5><strong><big>4. ¿Con qué frecuencia ha manejado con éxito los pequeños problemas irritantes de la vida?</big></strong></td></tr>
     <tr><td>&nbsp;</td></tr>
     <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_4" onclick="clearErrors()" value = 0><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_4" onclick="clearErrors()" value = 1><div></div></label></center></td>	
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_4" onclick="clearErrors()" value = 4><div></div></label></center></td>		
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_4" onclick="clearErrors()" value = 3><div></div></label></center></td>	
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_4" onclick="clearErrors()" value = 2><div></div></label></center></td>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_4" onclick="clearErrors()" value = 3><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_4" onclick="clearErrors()" value = 1><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_4" onclick="clearErrors()" value = 0><div></div></label></center></td>
 	</tr>
 	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Nunca</b></i></center></td>		
+	<td style="vertical-align:top" width=120><center><i><b>Casi unca</b></i></center></td>	
+	<td style="vertical-align:top" width=120><center><i><b>De vez en cuando</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>A menudo</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Muy a menudo</b></i></center></td>
+	
 	</tr>
   </table>	
 </div>
 
+
 <div class="tab">
   <table>
-	<tr><td colspan=4><strong><big>5. Miedo a que suceda lo peor.</big></strong></td></tr>
+	<tr><td colspan=5><strong><big>5. ¿Con qué frecuencia ha sentido que ha afrontado efectivamente los cambios importantes que han estado ocurriendo en su vida?</big></strong></td></tr>
     <tr><td>&nbsp;</td></tr>
     <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_5" onclick="clearErrors()" value = 0><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_5" onclick="clearErrors()" value = 1><div></div></label></center></td>	
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_5" onclick="clearErrors()" value = 4><div></div></label></center></td>		
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_5" onclick="clearErrors()" value = 3><div></div></label></center></td>	
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_5" onclick="clearErrors()" value = 2><div></div></label></center></td>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_5" onclick="clearErrors()" value = 3><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_5" onclick="clearErrors()" value = 1><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_5" onclick="clearErrors()" value = 0><div></div></label></center></td>
 	</tr>
 	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Nunca</b></i></center></td>		
+	<td style="vertical-align:top" width=120><center><i><b>Casi unca</b></i></center></td>	
+	<td style="vertical-align:top" width=120><center><i><b>De vez en cuando</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>A menudo</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Muy a menudo</b></i></center></td>
+	
 	</tr>
   </table>	
 </div>
 
 <div class="tab">
   <table>
-	<tr><td colspan=4><strong><big>6. Mareo o aturdimiento.</big></strong></td></tr>
+	<tr><td colspan=5><strong><big>6. ¿Con qué frecuencia ha estado seguro sobre su capacidad para manejar sus problemas personales?</big></strong></td></tr>
     <tr><td>&nbsp;</td></tr>
     <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_6" onclick="clearErrors()" value = 0><div></div></label></center></td>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_6" onclick="clearErrors()" value = 1><div></div></label></center></td>	
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_6" onclick="clearErrors()" value = 4><div></div></label></center></td>		
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_6" onclick="clearErrors()" value = 3><div></div></label></center></td>	
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_6" onclick="clearErrors()" value = 2><div></div></label></center></td>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_6" onclick="clearErrors()" value = 3><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_6" onclick="clearErrors()" value = 1><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_6" onclick="clearErrors()" value = 0><div></div></label></center></td>
 	</tr>
 	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Nunca</b></i></center></td>		
+	<td style="vertical-align:top" width=120><center><i><b>Casi unca</b></i></center></td>	
+	<td style="vertical-align:top" width=120><center><i><b>De vez en cuando</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>A menudo</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Muy a menudo</b></i></center></td>
+	
 	</tr>
   </table>	
 </div>
 
-
 <div class="tab">
   <table>
-	<tr><td colspan=4><strong><big>7. Palpitaciones o taquicardia.</big></strong></td></tr>
+	<tr><td colspan=5><strong><big>7. ¿Con qué frecuencia ha sentido que las cosas le van bien?</big></strong></td></tr>
     <tr><td>&nbsp;</td></tr>
     <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_7" onclick="clearErrors()" value = 0><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_7" onclick="clearErrors()" value = 1><div></div></label></center></td>	
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_7" onclick="clearErrors()" value = 4><div></div></label></center></td>		
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_7" onclick="clearErrors()" value = 3><div></div></label></center></td>	
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_7" onclick="clearErrors()" value = 2><div></div></label></center></td>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_7" onclick="clearErrors()" value = 3><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_7" onclick="clearErrors()" value = 1><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_7" onclick="clearErrors()" value = 0><div></div></label></center></td>
 	</tr>
 	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Nunca</b></i></center></td>		
+	<td style="vertical-align:top" width=120><center><i><b>Casi unca</b></i></center></td>	
+	<td style="vertical-align:top" width=120><center><i><b>De vez en cuando</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>A menudo</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Muy a menudo</b></i></center></td>
+	
 	</tr>
   </table>	
 </div>
 
+
 <div class="tab">
   <table>
-	<tr><td colspan=4><strong><big>8. Sensación de inestabilidad.</big></strong></td></tr>
+	<tr><td colspan=5><strong><big>8. ¿Con qué frecuencia ha sentido que no podía afrontar todas las cosas que tenía que hacer?</big></strong></td></tr>
     <tr><td>&nbsp;</td></tr>
     <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_8" onclick="clearErrors()" value = 0><div></div></label></center></td>	
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_8" onclick="clearErrors()" value = 0><div></div></label></center></td>		
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_8" onclick="clearErrors()" value = 1><div></div></label></center></td>	
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_8" onclick="clearErrors()" value = 2><div></div></label></center></td>
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_8" onclick="clearErrors()" value = 3><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_8" onclick="clearErrors()" value = 4><div></div></label></center></td>
 	</tr>
 	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Nunca</b></i></center></td>		
+	<td style="vertical-align:top" width=120><center><i><b>Casi unca</b></i></center></td>	
+	<td style="vertical-align:top" width=120><center><i><b>De vez en cuando</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>A menudo</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Muy a menudo</b></i></center></td>
+	
 	</tr>
   </table>	
 </div>
 
+
 <div class="tab">
   <table>
-	<tr><td colspan=4><strong><big>9. Terrores.</big></strong></td></tr>
+	<tr><td colspan=5><strong><big>9. ¿Con qué frecuencia ha podido controlar las dificultades de su vida?</big></strong></td></tr>
     <tr><td>&nbsp;</td></tr>
     <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_9" onclick="clearErrors()" value = 0><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_9" onclick="clearErrors()" value = 1><div></div></label></center></td>	
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_9" onclick="clearErrors()" value = 4><div></div></label></center></td>		
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_9" onclick="clearErrors()" value = 3><div></div></label></center></td>	
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_9" onclick="clearErrors()" value = 2><div></div></label></center></td>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_9" onclick="clearErrors()" value = 3><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_9" onclick="clearErrors()" value = 1><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_9" onclick="clearErrors()" value = 0><div></div></label></center></td>
 	</tr>
 	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Nunca</b></i></center></td>		
+	<td style="vertical-align:top" width=120><center><i><b>Casi unca</b></i></center></td>	
+	<td style="vertical-align:top" width=120><center><i><b>De vez en cuando</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>A menudo</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Muy a menudo</b></i></center></td>
+	
 	</tr>
   </table>	
 </div>
 
+
+
 <div class="tab">
   <table>
-	<tr><td colspan=4><strong><big>10. Nerviosismo.</big></strong></td></tr>
+	<tr><td colspan=5><strong><big>10. ¿Con qué frecuencia se ha sentido al control de todo?</big></strong></td></tr>
     <tr><td>&nbsp;</td></tr>
     <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_10" onclick="clearErrors()" value = 0><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_10" onclick="clearErrors()" value = 1><div></div></label></center></td>	
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_10" onclick="clearErrors()" value = 4><div></div></label></center></td>		
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_10" onclick="clearErrors()" value = 3><div></div></label></center></td>	
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_10" onclick="clearErrors()" value = 2><div></div></label></center></td>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_10" onclick="clearErrors()" value = 3><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_10" onclick="clearErrors()" value = 1><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_10" onclick="clearErrors()" value = 0><div></div></label></center></td>
 	</tr>
 	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Nunca</b></i></center></td>		
+	<td style="vertical-align:top" width=120><center><i><b>Casi unca</b></i></center></td>	
+	<td style="vertical-align:top" width=120><center><i><b>De vez en cuando</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>A menudo</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Muy a menudo</b></i></center></td>
+	
 	</tr>
   </table>	
 </div>
 
+
 <div class="tab">
   <table>
-	<tr><td colspan=4><strong><big>11. Sensación de ahogo.</big></strong></td></tr>
+	<tr><td colspan=5><strong><big>11. ¿Con qué frecuencia ha estado enfadado porque las cosas que le han ocurrido estaban fuera de su control?</big></strong></td></tr>
     <tr><td>&nbsp;</td></tr>
     <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_11" onclick="clearErrors()" value = 0><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_11" onclick="clearErrors()" value = 0><div></div></label></center></td>		
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_11" onclick="clearErrors()" value = 1><div></div></label></center></td>	
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_11" onclick="clearErrors()" value = 2><div></div></label></center></td>
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_11" onclick="clearErrors()" value = 3><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_11" onclick="clearErrors()" value = 4><div></div></label></center></td>
 	</tr>
 	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Nunca</b></i></center></td>		
+	<td style="vertical-align:top" width=120><center><i><b>Casi unca</b></i></center></td>	
+	<td style="vertical-align:top" width=120><center><i><b>De vez en cuando</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>A menudo</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Muy a menudo</b></i></center></td>
+	
 	</tr>
   </table>	
 </div>
 
+
 <div class="tab">
   <table>
-	<tr><td colspan=4><strong><big>12. Temblor de manos.</big></strong></td></tr>
+	<tr><td colspan=5><strong><big>12. ¿Con qué frecuencia ha pensado sobre las cosas que le quedan por lograr?</big></strong></td></tr>
     <tr><td>&nbsp;</td></tr>
     <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_12" onclick="clearErrors()" value = 0><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_12" onclick="clearErrors()" value = 0><div></div></label></center></td>		
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_12" onclick="clearErrors()" value = 1><div></div></label></center></td>	
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_12" onclick="clearErrors()" value = 2><div></div></label></center></td>
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_12" onclick="clearErrors()" value = 3><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_12" onclick="clearErrors()" value = 4><div></div></label></center></td>
 	</tr>
 	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Nunca</b></i></center></td>		
+	<td style="vertical-align:top" width=120><center><i><b>Casi unca</b></i></center></td>	
+	<td style="vertical-align:top" width=120><center><i><b>De vez en cuando</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>A menudo</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Muy a menudo</b></i></center></td>
+	
 	</tr>
   </table>	
 </div>
 
+
 <div class="tab">
   <table>
-	<tr><td colspan=4><strong><big>13. Temblor generalizado o estremecimiento.</big></strong></td></tr>
+	<tr><td colspan=5><strong><big>13. ¿Con qué frecuencia ha podido controlar la forma de pasar el tiempo?</big></strong></td></tr>
     <tr><td>&nbsp;</td></tr>
     <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_13" onclick="clearErrors()" value = 0><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_13" onclick="clearErrors()" value = 1><div></div></label></center></td>	
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_13" onclick="clearErrors()" value = 4><div></div></label></center></td>		
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_13" onclick="clearErrors()" value = 3><div></div></label></center></td>	
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_13" onclick="clearErrors()" value = 2><div></div></label></center></td>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_13" onclick="clearErrors()" value = 3><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_13" onclick="clearErrors()" value = 1><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_13" onclick="clearErrors()" value = 0><div></div></label></center></td>
 	</tr>
 	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Nunca</b></i></center></td>		
+	<td style="vertical-align:top" width=120><center><i><b>Casi unca</b></i></center></td>	
+	<td style="vertical-align:top" width=120><center><i><b>De vez en cuando</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>A menudo</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Muy a menudo</b></i></center></td>
+	
 	</tr>
   </table>	
 </div>
 
+
 <div class="tab">
   <table>
-	<tr><td colspan=4><strong><big>14. Miedo a perder el control.</big></strong></td></tr>
+	<tr><td colspan=5><strong><big>14. ¿Con qué frecuencia ha sentido que las dificultades se acumulan tanto que no puede superarlas?</big></strong></td></tr>
     <tr><td>&nbsp;</td></tr>
     <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_14" onclick="clearErrors()" value = 0><div></div></label></center></td>	
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_14" onclick="clearErrors()" value = 0><div></div></label></center></td>		
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_14" onclick="clearErrors()" value = 1><div></div></label></center></td>	
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_14" onclick="clearErrors()" value = 2><div></div></label></center></td>
 	<td width=120><center><label><input type = "radio" id = "mc" name = "question_14" onclick="clearErrors()" value = 3><div></div></label></center></td>
+	<td width=120><center><label><input type = "radio" id = "mc" name = "question_14" onclick="clearErrors()" value = 4><div></div></label></center></td>
 	</tr>
 	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Nunca</b></i></center></td>		
+	<td style="vertical-align:top" width=120><center><i><b>Casi unca</b></i></center></td>	
+	<td style="vertical-align:top" width=120><center><i><b>De vez en cuando</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>A menudo</b></i></center></td>
+	<td style="vertical-align:top" width=120><center><i><b>Muy a menudo</b></i></center></td>
+	
 	</tr>
   </table>	
 </div>
 
-<div class="tab">
-  <table>
-	<tr><td colspan=4><strong><big>15. Dificultad para respirar.</big></strong></td></tr>
-    <tr><td>&nbsp;</td></tr>
-    <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_15" onclick="clearErrors()" value = 0><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_15" onclick="clearErrors()" value = 1><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_15" onclick="clearErrors()" value = 2><div></div></label></center></td>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_15" onclick="clearErrors()" value = 3><div></div></label></center></td>
-	</tr>
-	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
-	</tr>
-  </table>	
-</div>
-
-<div class="tab">
-  <table>
-	<tr><td colspan=4><strong><big>16. Miedo a morir.</big></strong></td></tr>
-    <tr><td>&nbsp;</td></tr>
-    <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_16" onclick="clearErrors()" value = 0><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_16" onclick="clearErrors()" value = 1><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_16" onclick="clearErrors()" value = 2><div></div></label></center></td>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_16" onclick="clearErrors()" value = 3><div></div></label></center></td>
-	</tr>
-	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
-	</tr>
-  </table>	
-</div>
-
-<div class="tab">
-  <table>
-	<tr><td colspan=4><strong><big>17. Sobresaltos por estar asustado/a.</big></strong></td></tr>
-    <tr><td>&nbsp;</td></tr>
-    <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_17" onclick="clearErrors()" value = 0><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_17" onclick="clearErrors()" value = 1><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_17" onclick="clearErrors()" value = 2><div></div></label></center></td>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_17" onclick="clearErrors()" value = 3><div></div></label></center></td>
-	</tr>
-	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
-	</tr>
-  </table>	
-</div>
-
-
-<div class="tab">
-  <table>
-	<tr><td colspan=4><strong><big>18. Molestias digestivas o abdominales.</big></strong></td></tr>
-    <tr><td>&nbsp;</td></tr>
-    <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_18" onclick="clearErrors()" value = 0><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_18" onclick="clearErrors()" value = 1><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_18" onclick="clearErrors()" value = 2><div></div></label></center></td>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_18" onclick="clearErrors()" value = 3><div></div></label></center></td>
-	</tr>
-	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
-	</tr>
-  </table>	
-</div>
-
-
-<div class="tab">
-  <table>
-	<tr><td colspan=4><strong><big>19. Sensación de irme a desmayar.</big></strong></td></tr>
-    <tr><td>&nbsp;</td></tr>
-    <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_19" onclick="clearErrors()" value = 0><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_19" onclick="clearErrors()" value = 1><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_19" onclick="clearErrors()" value = 2><div></div></label></center></td>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_19" onclick="clearErrors()" value = 3><div></div></label></center></td>
-	</tr>
-	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
-	</tr>
-  </table>	
-</div>
-
-<div class="tab">
-  <table>
-	<tr><td colspan=4><strong><big>20. Rubor facial.</big></strong></td></tr>
-    <tr><td>&nbsp;</td></tr>
-    <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_20" onclick="clearErrors()" value = 0><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_20" onclick="clearErrors()" value = 1><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_20" onclick="clearErrors()" value = 2><div></div></label></center></td>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_20" onclick="clearErrors()" value = 3><div></div></label></center></td>
-	</tr>
-	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
-	</tr>
-  </table>	
-</div>
-
-<div class="tab">
-  <table>
-	<tr><td colspan=4><strong><big>21. Sudoración (no debido al calor).</big></strong></td></tr>
-    <tr><td>&nbsp;</td></tr>
-    <tr>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_21" onclick="clearErrors()" value = 0><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_21" onclick="clearErrors()" value = 1><div></div></label></center></td>	
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_21" onclick="clearErrors()" value = 2><div></div></label></center></td>
-	<td width=120><center><label><input type = "radio" id = "mc" name = "question_21" onclick="clearErrors()" value = 3><div></div></label></center></td>
-	</tr>
-	<tr>
-	<td style="vertical-align:top" width=120><center><i><b>En absoluto</center></td>	
-	<td style="vertical-align:top" width=120><center><i><b>Levemente</b></i>, no me molesta mucho</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Moderadamente</b></i>, fue muy desagradable pero podía soportarlo</center></td>
-	<td style="vertical-align:top" width=120><center><i><b>Severamente</b></i>, casi no podía soportarlo</center></td>
-	</tr>
-  </table>	
-</div>
 
 <div class="tab">
     <p style="text-align: center;">Por último, indícanos tus datos demográficos y obtén los resultados:</p>
@@ -460,7 +376,7 @@
 	<br>
 
 
-	<input type="hidden" id="BAI" name="BAI"  value=0>
+	<input type="hidden" id="PSS" name="PSS"  value=0>
 	<input type="hidden" id="Code" name = "Code" value= "">
 
 <div id="ErrorMsg2"><br>&nbsp;</div>
@@ -501,13 +417,6 @@
   <span class="step"></span>
   <span class="step"></span>
   <span class="step"></span>
-  <span class="step"></span>
-  <span class="step"></span>
-  <span class="step"></span>
-  <span class="step"></span>
-  <span class="step"></span>
-  <span class="step"></span>
-  <span class="step"></span>
 </div>
 
 
@@ -525,8 +434,8 @@ showTab(currentTab); // Display the current tab
 </script>
 
 <script >
-var $form = $('form#formbai'),
-    url = 'https://script.google.com/macros/s/AKfycbyxsl8Ns4KrZ1wmtEL1AlKiv5mAetNP9SCRp1SLXarrZkslzs5I/exec'
+var $form = $('form#formpss'),
+    url = 'https://script.google.com/macros/s/AKfycbyjdXzj-n6Rp0UYnpaDtU0cioOuThTtquMt-p7F-lJpFOp6fiE/exec'
 
 $('#button_enviar').on('click', function(e) {
   e.preventDefault();

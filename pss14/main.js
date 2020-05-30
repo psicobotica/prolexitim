@@ -1,6 +1,6 @@
 
 var currentTab = 0; // Current tab is set to be the first tab (0)
-var BAIItems = new Array(); 
+var PSSItems = new Array(); 
 
 
 function showTab(n) {
@@ -67,7 +67,7 @@ function validateForm() {
       // add an "invalid" class to the field:
       // Not for radio buttons... y[i].className += " invalid";
       // and set the current valid status to false:
-	  document.getElementById("ErrorMsg").innerHTML = "<h4 style='color:red'>Por favor, indica el grado en que has sido afectado/a por este síntoma.</h4>";
+	  document.getElementById("ErrorMsg").innerHTML = "<h4 style='color:red'>Por favor, indica cómo te has sentido o qué has pensado en esta situación.</h4>";
       valid = false;
   }
   
@@ -75,7 +75,7 @@ function validateForm() {
   if (valid) {
 	  
 	// Save the value. 
-	BAIItems.push(parseInt(radio_value));
+	PSSItems.push(parseInt(radio_value));
 	
 	document.getElementById("ErrorMsg").innerHTML = "";
     document.getElementsByClassName("step")[currentTab].className += " finish";
@@ -118,11 +118,11 @@ function check() {
 	var genero_select = document.getElementById("Gender");
 	var genero = genero_select.options[genero_select.selectedIndex].value;
 	console.log("Genero:" + genero);
-	var edad = document.formbai.Age.value;
+	var edad = document.formpss.Age.value;
 	console.log("Edad: " + edad);
-	var email = document.formbai.Email.value;
+	var email = document.formpss.Email.value;
 	console.log("Email: " + email);
-	var privacidad = document.formbai.Privacidad.checked; 
+	var privacidad = document.formpss.Privacidad.checked; 
 	console.log("Privacidad: " + privacidad);
 	
 	var todorespondido = true;
@@ -150,38 +150,38 @@ function check() {
 		
 		var results_str = ""; 
 
-		var puntosBAI = 0;
+		var puntosPSS = 0;
 		
 		// Collect and sum all responses
-		for (i = 0; i < BAIItems.length; i++) {
-			puntosBAI += BAIItems[i];
+		for (i = 0; i < PSSItems.length; i++) {
+			puntosPSS += PSSItems[i];
 		}
 		
-		document.getElementById("BAI").value = puntosBAI;
+		document.getElementById("PSS").value = puntosPSS;
 		document.getElementById("input-email").value = email;
 		document.getElementById("Code").value = md5(email);		
 		
 		document.getElementById("thanksMsg").innerHTML = "<h4 style='color:green; text-align:center'>Gracias. Datos recibidos correctamente.</h4>";
 		
-		results_str = "<p style='text-align:left'>Has obtenido un total de <u><strong>" + puntosBAI + " puntos</strong></u> en el inventario de ansiedad BAI.<br>&nbsp;" 
+		results_str = "<p style='text-align:left'>Has obtenido un total de <u><strong>" + puntosPSS + " puntos</strong></u> en la Escala de Estrés Percibido.<br>&nbsp;" 
 		+ "<p style='text-align:left'>Estos resultados indican ";
 		
-		if (puntosBAI >= 36) {
-			// Ansiedad severa
-			results_str += "<b><u>una ansiedad severa</u></b>.</p>";
+		if (puntosPSS >= 32) {
+			// Estrés muy alto
+			results_str += "<b><u>un nivel de estrés muy alto</u></b>.</p>";
 			results_str += "<p>En vista de estos resultados te recomendamos encarecidamente que contactes con un profesional de la salud. Puedes solicitarnos una <a href='https://www.psicobotica.com/atencion-psicologica-online/' target='_blank'>entrevista online gratuita</a>.</p>";
-		} else if (puntosBAI <= 21) {
-			// Ansiedad muy baja.
-			results_str += "<b><u>una ansiedad muy baja</u></b>.</p>";
-			results_str += "<p>Nos alegra saber que no tienes síntomas graves de ansiedad. No obstante, si te preocupa cualquier otra cosa, puedes solicitarnos una <a href='https://www.psicobotica.com/atencion-psicologica-online/' target='_blank'>entrevista online gratuita</a>.</p>";
+		} else if (puntosPSS < 23) {
+			// Estrés bajo.
+			results_str += "<b><u>un nivel de estrés bajo</u></b>.</p>";
+			results_str += "<p>Nos alegra saber que no tienes un estrés elevado. No obstante, si te preocupa cualquier otra cosa, puedes solicitarnos una <a href='https://www.psicobotica.com/atencion-psicologica-online/' target='_blank'>entrevista online gratuita</a>.</p>";
 		} else {
-			// Ansiedad moderada
-			results_str += "<b><u>una ansiedad moderada</u></b>.</p>";
-			results_str += "<p>Aunque no tienes síntomas muy severos de ansiedad te recomendamos que contactes con un profesional de la salud si ves que no puedes manejar adecuadamente la situación. Puedes solicitarnos una <a href='https://www.psicobotica.com/atencion-psicologica-online/' target='_blank'>entrevista online gratuita</a>.</p>";
+			// Estrés alto
+			results_str += "<b><u>un nivel de estrés moderado</u></b>.</p>";
+			results_str += "<p>Aunque no tienes un nivel muy alto de estrés te recomendamos que contactes con un profesional de la salud si ves que no puedes manejar adecuadamente la situación. Puedes solicitarnos una <a href='https://www.psicobotica.com/atencion-psicologica-online/' target='_blank'>entrevista online gratuita</a>.</p>";
 		}
 		
 		// Call to action (psy attention):
-		results_str += "<p>Para interpretar estos resultados correctamente, puedes consultar en el blog de Psicobōtica los <a href='https://www.psicobotica.com/blog/' target='_blank'>artículos sobre ansiedad</a>.</p><hr>";
+		results_str += "<p>Para interpretar estos resultados correctamente, puedes consultar en el blog de Psicobōtica los <a href='https://www.psicobotica.com/blog/' target='_blank'>artículos sobre estrés</a>.</p><hr>";
 		
 		// Call to action (prolexitim NLP):
 		results_str += "<p><a href='https://psicobotica.com/prolexitim/nlp/index.html' target='_blank'><img style='float:left' src='narrativa_320x236.jpg'></a><strong>¿Quieres saber más sobre tus emociones?</strong><br>&nbsp;<br><a href='https://psicobotica.com/prolexitim/nlp/index.html' target='_blank'>Accede aquí al test Prolexitim NLP</a>, un test basado en tu expresión verbal. Te mostraremos unas imágenes que tendrás que describir y analizaremos tus narrativas automáticamente utilizando Inteligencia Artificial.</p>";
