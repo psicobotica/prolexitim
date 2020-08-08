@@ -150,7 +150,8 @@ function check() {
 		var results_str = ""; 
 
 		var puntosPHQ9 = 0;
-		for(var i = 0; i < PHQ9Items.length; i++) {
+		for(var i = 0; i < PHQ9Items.length; i++) {			
+			document.getElementById("I".concat((i+1).toString())).value = PHQ9Items[i];
 			puntosPHQ9 += PHQ9Items[i];
 		}
 		
